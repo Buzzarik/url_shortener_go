@@ -40,8 +40,8 @@ func main() {
 
 	router := httprouter.New();
 
-	router.POST("/Savealias", handlers.SaveUrl(app));
-	router.GET("/Getalias/:alias", handlers.GetAlias(app));
+	router.POST("/Savealias", handlers.Auth(app, handlers.SaveUrl(app)));
+	router.GET("/Getalias/:alias", handlers.Auth(app, handlers.GetAlias(app)));
 
 
 	srv := &http.Server{

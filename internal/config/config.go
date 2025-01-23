@@ -32,7 +32,7 @@ type ConfigServer struct {
 	Port 			int 		`yaml:"port"`
 	Timeout 		time.Duration  	`yaml:"timeout"`
 	IdleTimeout 	time.Duration 	`yaml:"idle_timeout"`
-	IdApi 			int 		`yaml:"ad_api"`
+	IdApi 			int 		`yaml:"id_api"`
 };
 
 func LoadConfig() *Config {
