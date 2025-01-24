@@ -75,6 +75,7 @@ func Auth(app *service.Application, h httprouter.Handle) httprouter.Handle {
 					slog.String("error", err.Error()));
 			return;
 		}
+		defer resp.Body.Close();
 		
 		if resp.StatusCode == http.StatusOK {
 			h(w, r, ps);
